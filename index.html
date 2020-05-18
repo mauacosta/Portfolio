@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Mau Acosta</title>
         <meta name="title" content="Mau Acosta | Ux & Game Developer">
         <meta name="description" content="I am a passionate User Experience Developer. I focus mainly on gaming and interactive experiences. Mexican, based on Mexico City. ">
         <meta name="keywords" content="UX Game Developer, Mau Acosta, Desarrollador de juegos, UX Developer, UX, UI Developer, Mau">
@@ -35,7 +36,7 @@
          </header>
         <div id="fullpage">
             <div class="section" id="mainSection">
-                <div id="indexContainer">
+                <div class="container">
                     <table id="tictactoe">
                         <tr>
                             <th id="s0-0"></th>
@@ -60,12 +61,25 @@
                     
                     <div class="section-nav">
                         <p id="numChar">一</p>
-                        <a id="nextCircle"></a>
+                        <a class="circle nextCircle"></a>
                     </div>
                 </div>
             </div>
             <div class="section" id="aboutSection">
-                
+                <div class="container">
+                    <h2>My name is Mau<span id="line">|</span></h2>
+                    <img src="img/about.jpg">
+                    <div class="section-nav">
+                        <a class="circle beforeCircle"></a>
+                        <p id="numChar">二</p>
+                        <a class="circle nextCircle"></a>
+                    </div>
+                    <div id="description">
+                        <p>My name is <strong>Mau Acosta</strong>. University student. Born and raised in beautiful Mexico City. One of the most curious persons you’ll ever meet. Always looking to learn a little bit more.</p>
+                        <h5>I am a huge passionate about <span id="programming">programming</span>, <span id="games">games</span>, <span id="art">art</span> & <span id="design">design.</span></h5>
+                    </div>
+                    <h6><span>¿What I also love? </span><a href="https://www.goodreads.com/user/show/79299854-mau-acosta">Reading</a>, Topochico, Music & Soccer</h6>
+                </div>
             </div>
             <div class="section" id="educationSection">
                 
@@ -80,16 +94,23 @@
                 licenseKey: '1E96E30E-17854112-A381491B-C3399B7D',
                 anchors: ['main', 'about', 'education'],
                 sectionsColor: ['#2D2D2D', '#2A3C28', 'blue'],
+                
                 onLeave: function(origin, now, direction) {
-                    console.log(now);
                     $('nav ul li a').removeClass('activeLi');
                     if(now.isFirst){
                         $('#textLogo').css('display', 'none');
                         $('.social').css('display', 'block');
+                        $('.tr-pointer').css('display', 'inline');
+                    }else if(now.isLast){
+                        $('#textLogo').css('display', 'block');
+                        $('.social').css('display', 'none');
+                        $('.tr-pointer').css('display', 'none');
                     }else{
                         $('#textLogo').css('display', 'block');
                         $('.social').css('display', 'none');
+                        $('.tr-pointer').css('display', 'inline');
                     }
+                    
                     if(now.anchor === 'about'){
                         $('nav ul li a').removeClass('activeLi');
                         $('#aboutLi').addClass('activeLi');
@@ -100,10 +121,23 @@
                     }
                 }
             });
-
-            $( document ).ready(function() {
-                setTimeout(startGame(), 3000);
+            
+            $('.nextCircle').click(function(){
+                fullpage_api.moveSectionDown();
             });
+
+            $('.tr-pointer').click(function(){
+                fullpage_api.moveSectionDown();
+            });
+
+            $('.beforeCircle').click(function(){
+                fullpage_api.moveSectionUp();
+            });
+
+            setTimeout(startGame(), 2000);
+
+
+
         </script>
     </body>
 

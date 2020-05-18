@@ -11,15 +11,17 @@ body{
   margin: 0;
 }
 
-
-#indexContainer{
-  display: grid;
+.container{
   margin: 0;
   padding: 0;
-  grid-template-columns: 5% 30% 20% 40% 5%;
-  grid-template-rows: 20% 35% 25%;
+  display: grid;
   height: 100%;
   width: 100%;
+}
+
+#mainSection .container{
+  grid-template-columns: 5% 30% 20% 40% 5%;
+  grid-template-rows: 20% 35% 25%;
 }
 
 header, footer{
@@ -166,22 +168,138 @@ nav ul li a:hover::after{
 .section-nav{
   grid-row: 2;
   grid-column: 5;
+  margin-right: 10px;
+  z-index: 10;
+
 }
 
 .section-nav #numChar{
   color: #E7E8EB;
-  font-size: 3em;
+  font-size: 3rem;
   text-align: center;
   margin: 0;
 }
 
-.section-nav #nextCircle{
+.section-nav .circle{
   display: inline-block;
   width: 25px;
   height: 25px;
   border-radius: 50%;
   background: #E7E8EB;
-  margin-left: 30%;
+  transition: 0.3s;
+}
+
+.section-nav .circle:hover{
+  width: 28px;
+  height: 28px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+
+
+#mainSection .section-nav .circle{
+  margin-left: 18px;
+}
+
+#aboutSection .container{
+  grid-template-columns: 10% 10% 60% 10% 10%;
+  grid-template-rows: 10% 70% 5% 10%;
+  font-size: 1.5em;
+}
+
+#aboutSection img{
+  grid-row: 2;
+  grid-column: 3;
+  width: 100%;
+  height: 100%;
+  opacity: 40%;
+  z-index: 0;
+}
+
+#aboutSection h2{
+  color: #FFFFFF;
+  grid-row: 1;
+  grid-column: 1/6;
+  z-index: 2;
+  text-align: center;
+  font-size: 4em;
+  margin: 100px 20px;
+  display: block;
+}
+
+#aboutSection h2 #line{
+  animation: textLineAnim 1s infinite;
+}
+
+#aboutSection #description{
+  position: relative;
+  grid-column: 2/5;
+  grid-row: 1;
+  text-align: center;
+  z-index: 2;
+  margin-top: 300px;
+}
+#aboutSection #description p{
+  font-size: 1em;
+  margin: 0;
+  color: #E7E8E8;
+  
+}
+
+#aboutSection #description h5{
+  font-size: 1.5em;
+  color: #FFFFFF;
+}
+
+#aboutSection #description h5 #programming{
+  color: black;
+  text-decoration: underline;
+}
+
+#aboutSection #description h5 #games:hover{
+  color: yellow;
+  font-size: 1.1em;
+}
+
+#aboutSection #description h5 #art{
+  font-style: italic;
+}
+
+#aboutSection #description h5 #design{
+  text-shadow: 2px 2px red;
+}
+
+#aboutSection h6{
+  color: #E7E8E8;
+  grid-row: 4;
+  grid-column: 1/4;
+  text-align: left;
+  font-size: 0.75em;
+  margin-top: 10px;
+  display: block;
+}
+
+#aboutSection h6 a{
+  color: #E7E8E8;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+#aboutSection h6 span{
+  font-size: 1.2em;
+}
+
+#aboutSection h6 a:hover{
+  color: #FFFFFF;
+}
+
+#aboutSection .section-nav{
+  margin-right: 0;
+  padding: 200px 0 50px 60px;
+}
+
+#aboutSection .section-nav .circle{
+  margin-left: 30px;
 }
 
 @keyframes underline{
@@ -209,4 +327,10 @@ nav ul li a:hover::after{
   0% {bottom: 20px;}
   50% {bottom: 10px;}
   100% {bottom: 20px;}
+}
+
+@keyframes textLineAnim{
+  0%{opacity: 0;}
+  50%{opacity: 1;}
+  100%{opacity: 0;}
 }

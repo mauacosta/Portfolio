@@ -26,7 +26,7 @@ function drawPiece(row, column, player){
 async function paintTie(){
     console.log('tie');
     $('.tache').children().css('animation', 'tieCross 3s forwards');
-    $('.circle').css( "animation", "tieCircle 3s forwards");
+    $('#tictactoe .circle').css( "animation", "tieCircle 3s forwards");
     await new Promise(r => setTimeout(r, 4000));
     $('#tictactoe th').empty();
     startGame();
@@ -34,7 +34,7 @@ async function paintTie(){
 
 async function paintXWin(){
     await new Promise(r => setTimeout(r, 2000));
-    $('.circle').css('animation', 'fadeCircleOut 10s forwards');
+    $('#tictactoe .circle').css('animation', 'fadeCircleOut 10s forwards');
     $('.tache').children().css('animation', 'winCross 10s forwards');
     await new Promise(r => setTimeout(r, 4000));
     $('#tictactoe th').empty();
@@ -44,7 +44,7 @@ async function paintXWin(){
 async function paintOWin(){
     await new Promise(r => setTimeout(r, 2000));
     $('.tache').children().css('animation', 'fadeCrossOut 10s forwards');
-    $('.circle').css('animation', 'winCircle 10s forwards');
+    $('#tictactoe .circle').css('animation', 'winCircle 10s forwards');
     await new Promise(r => setTimeout(r, 4000));
     $('#tictactoe th').empty();
     startGame();

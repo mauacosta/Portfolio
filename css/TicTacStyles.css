@@ -33,7 +33,7 @@
 }
 
 
-.circle {
+#tictactoe .circle {
   position: relative;
   overflow: hidden;
   width: 30%;
