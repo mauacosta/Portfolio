@@ -1,0 +1,212 @@
+html{
+  font-family: 'Helvetica', sans-serif;
+}
+
+body{
+  width: 100%;
+  margin: 0;
+}
+
+.section {
+  margin: 0;
+}
+
+
+#indexContainer{
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: 5% 30% 20% 40% 5%;
+  grid-template-rows: 20% 35% 25%;
+  height: 100%;
+  width: 100%;
+}
+
+header, footer{
+  z-index: 3;
+  position: relative;
+}
+
+header #textLogo{
+  display: none;
+}
+
+header #textLogo h2{
+  float: left;
+  text-decoration: none;
+  color: #9E9E9F;
+  font-size: 1.5em;
+  font-weight: 300 !important;
+  margin-left: 25px;
+  transition: 1s;
+}
+
+.social{
+  float: left;
+  margin-left: 25px;
+}
+
+.social i{
+  margin-top: 6px;
+  color: #727476;
+  font-size: 2em;
+}
+
+.social i:first-child{
+  margin-right: 5px;
+}
+
+nav{
+  position: relative;
+}
+
+nav ul{
+  overflow: hidden;
+  list-style-type: none;
+  margin: 10px;
+  padding: 0;
+  float: right;
+}
+
+nav ul li{
+  display: inline;
+  text-align: center;
+}
+
+
+nav ul li a{
+  color: #727476;
+  text-decoration: none;
+  font-size: 2em;
+  font-weight: 300;
+  margin-right: 25px;
+  transition: 0.6s;
+  position: relative;
+}
+
+#resumeBtn a{
+  color: #9E9E9F;
+  margin-right: 15px;
+}
+
+nav ul li a:hover{
+  color: #CCCFD1;
+  font-weight: 500;
+}
+
+nav ul li a:hover::after{
+  content: '';
+  position: absolute;
+  background-color: #CCCFD1;
+  height: 2px;
+  top: 90%;
+  left: 0;
+  animation: underlineMenu 0.6s;
+  width: 95%;
+}
+
+.activeLi::after{
+  content: '';
+  position: absolute;
+  background-color: #CCCFD1;
+  height: 2px;
+  top: 90%;
+  left: 0;
+  animation: underlineMenu 0.6s forwards;
+  width: 95%;
+  transition: 0.6s;
+}
+
+.title{
+  grid-column: 4;
+  grid-row: 2;
+  box-sizing: border-box;
+  font-size: 2em;
+}
+
+.title .mauName{
+  color: #E7E8E8;
+  font-size: 4em;
+  font-weight: normal;
+  text-align: left;
+  margin: 0;
+  animation: fadeUp 1s 0.01s;
+}
+
+.title .mauTitle{
+  font-size: 1em;
+  text-align: left;
+  margin: 0;
+  font-weight: normal;
+  color: #727476;
+  position: relative;
+  animation: fadeUp 1s 0.01s;
+}
+
+.title .mauTitle::after{
+  content: '';
+  position: absolute;
+  background-color: #6B6F73;
+  height: 7px;
+  top: 100%;
+  left: 0;
+  animation: underline 3s 0.3s forwards;
+}
+
+.tr-pointer{
+  position: relative;
+  left: 50%;
+  bottom: 10px;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+  border-top: 25px solid white;
+  animation: inviteAnimation 2s infinite;
+}
+
+.section-nav{
+  grid-row: 2;
+  grid-column: 5;
+}
+
+.section-nav #numChar{
+  color: #E7E8EB;
+  font-size: 3em;
+  text-align: center;
+  margin: 0;
+}
+
+.section-nav #nextCircle{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #E7E8EB;
+  margin-left: 30%;
+}
+
+@keyframes underline{
+  from{width: 0;}
+  to{width: 60%;}
+}
+
+@keyframes fadeUp{
+  from{
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes underlineMenu{
+  from{width: 0;}
+  to{width: 95%;}
+}
+
+@keyframes inviteAnimation{
+  0% {bottom: 20px;}
+  50% {bottom: 10px;}
+  100% {bottom: 20px;}
+}

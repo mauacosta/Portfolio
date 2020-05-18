@@ -1,0 +1,208 @@
+#tictactoe{
+  box-sizing: border-box;
+  grid-column: 2;
+  grid-row: 2;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-20deg);
+}
+
+#tictactoe tr, #tictactoe th{
+  position: relative;
+}
+
+#tictactoe th{
+  width: 33%;
+  height: 33%;
+}
+
+#tictactoe #s0-1, #tictactoe #s2-1{
+  border: 2px solid #90949D;
+  border-top: none;
+  border-bottom: none;
+}
+
+#tictactoe #s1-0, #tictactoe #s1-2{
+  border: 2px solid #90949D;
+  border-right: none;
+  border-left: none;
+}
+
+#tictactoe #s1-1{
+  border: 2px solid #90949D;
+}
+
+
+.circle {
+  position: relative;
+  overflow: hidden;
+  width: 30%;
+  height: 50%;
+  border-radius: 50%;
+  left: 30%;
+  background: #2D2D2D;
+  border: 1px solid #E7E8E8;
+  animation: drawCircle 0.7s 0.01s forwards;
+  top: 1%;
+}
+
+.tache .l1, .tache .l2{
+  position: absolute;
+  background-color: #E7E8E8;
+  left: 30%;
+  height: 10px;
+  width: 50%;
+  opacity: 0;
+}
+.tache .l1{
+  animation: drawLine 0.5s 0.01s forwards;
+  transform: rotate(45deg);
+}
+
+.tache .l2{
+  animation: drawLine 0.5s 0.8s forwards;
+  transform: rotate(-45deg);
+}
+
+
+@keyframes drawCircle{
+  0% {
+    box-shadow: 20px -20px 0 2px #2D2D2D, -20px -20px 0 2px #2D2D2D, -20px 20px 0 2px #2D2D2D, 20px 20px 0 2px #2D2D2D, 0 0 0 6px #E7E8E8;
+  }
+  25% {
+    box-shadow: 0 -55px 0 0px rgba(0, 0, 0, 0), -20px -20px 0 2px #2D2D2D, -20px 20px 0 2px #2D2D2D, 20px 20px 0 2px #2D2D2D, 0 0 0 6px #E7E8E8;
+  }
+  50% {
+    box-shadow: 0 -55px 0 0px rgba(0, 0, 0, 0), -55px 0px 0px rgba(0, 0, 0, 0), -20px 20px 0 2px #2D2D2D, 20px 20px 0 2px #2D2D2D, 0 0 0 6px #E7E8E8;
+  }
+  75% {
+    box-shadow: 0 -55px 0 0px rgba(0, 0, 0, 0), -55px 0px 0 0px rgba(0, 0, 0, 0), 0px 55px 0 0px rgba(0, 0, 0, 0), 20px 20px 0 2px #2D2D2D, 0 0 0 6px #E7E8E8;
+  }
+  100% {
+    -webkit-box-shadow: none;
+	  -moz-box-shadow: none;
+	  box-shadow: none;
+    border: 6px solid #E7E8E8;
+  } 
+}
+
+@keyframes drawLine{
+  from{
+    opacity: 0;
+    width: 0;
+  }
+  to{
+    opacity: 1;
+    width: 50%;
+  }
+}
+
+@keyframes tieCircle{
+  0%{
+    border: 6px solid #E7E8E8;
+  }
+
+  30%{
+    border: 6px solid #FFD662FF;
+  }
+
+  50%{
+    border: 6px solid #FFD662FF;
+  }
+
+  100%{
+    border: none;
+  }
+}
+
+@keyframes winCircle{
+  0%{
+    border: 6px solid #E7E8E8;
+  }
+
+  30%{
+    border: 6px solid #2C5F2D;
+  }
+
+  50%{
+    border: 6px solid #2C5F2D;
+  }
+
+  80%{
+    border: none;
+  }
+}
+
+@keyframes tieCross{
+  0%{
+    background-color: #E7E8E8;
+    opacity: 1;
+  }
+
+  30%{
+    background-color:  #FFD662FF;
+  }
+
+  50%{
+    background-color:  #FFD662FF;
+  }
+
+  80%{
+    opacity: 0;
+  }
+}
+
+@keyframes winCross{
+  0%{
+    background-color: #E7E8E8;
+    opacity: 1;
+  }
+
+  30%{
+    background-color:  #2C5F2D;
+  }
+
+  50%{
+    background-color:  #2C5F2D;
+  }
+
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes fadeCrossOut{
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
+
+@keyframes fadeCircleOut{
+  from{
+    border: 6px solid #E7E8E8;
+  }
+  to{
+    border: none;
+  }
+}
+
+@keyframes rowWin{
+  from{
+    width: 0;
+  }
+  to{
+    width: 300%;
+  }
+}
+
+@keyframes colWin{
+  from{
+    width: 0;
+  }
+  to{
+    width: 200%;
+  }
+}
