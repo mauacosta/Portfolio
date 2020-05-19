@@ -67,7 +67,7 @@
             </div>
             <div class="section" id="aboutSection">
                 <div class="container">
-                    <h2>My name is Mau<span id="line">|</span></h2>
+                    <h2><span id="text"></span><span id="line">|</span></h2>
                     <img src="img/about.jpg">
                     <div class="section-nav">
                         <a class="circle beforeCircle"></a>
@@ -89,6 +89,7 @@
             <a class="tr-pointer" href="#"></a>
         </footer>
         <script type="text/javascript" src="js/tictac.js"></script>
+        <script type="text/javascript" src="js/typewrite.js"></script>
         <script type="text/javascript">
             new fullpage('#fullpage', {
                 licenseKey: '1E96E30E-17854112-A381491B-C3399B7D',
@@ -115,6 +116,7 @@
                         $('nav ul li a').removeClass('activeLi');
                         $('#aboutLi').addClass('activeLi');
                     }
+
                     if(now.anchor === 'education'){
                         $('nav ul li a').removeClass('activeLi');
                         $('#educationLi').addClass('activeLi');
@@ -135,6 +137,7 @@
             });
 
             setTimeout(startGame(), 2000);
+            selectText([]);
 
 
 
